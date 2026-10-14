@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 30" width="40" height="30">
+  <rect width="40" height="30" fill="#0077c8"/>
+  <!-- Yellow border for diagonal stripe -->
+  <polygon points="0,30 0,23 30.67,0 40,0 40,7 9.33,30" fill="#fcd116"/>
+  <!-- Red diagonal stripe -->
+  <polygon points="0,30 0,25 33.33,0 40,0 40,5 6.67,30" fill="#ce1126"/>
+  <!-- Yellow star at top-left (center around 7, 7) -->
+  <polygon points="7,3.2 8.18,6.82 12,6.82 8.91,9.06 10.09,12.68 7,10.44 3.91,12.68 5.09,9.06 2,6.82 5.82,6.82" fill="#fcd116"/>
+</svg>
