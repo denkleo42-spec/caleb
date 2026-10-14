@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 30" width="40" height="30">
-  <rect width="40" height="30" fill="#dc241f"/>
-  <!-- Yellow diagonal band -->
-  <polygon points="0,30 0,13.33 22.22,0 40,0 40,16.67 17.78,30" fill="#fbde4a"/>
-  <!-- Green top-left triangle -->
-  <polygon points="0,0 26.67,0 0,20" fill="#009543"/>
-</svg>
